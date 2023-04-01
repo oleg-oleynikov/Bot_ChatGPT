@@ -43,7 +43,9 @@ async def reset_conv(message: types.Message):
 async def chat_text(message: types.Message):
     await message.answer(text=chatbot.ask(message.text))
     try:
-        await message.answer(chatbot.ask("Можешь ли ты продолжить данный текст, ответь одним словом, /continue если да и не отвечай ничего если нет"))
+        ans = chatbot.ask("Можешь ли ты продолжить данный текст ответь одним словом, да или нет?")
+        if ans:
+            await message.answer(text="Вы можете продолжить данный текст - /continue")
     except:
         await message.answer(text="Генерация окончена")
         chatbot.reset()
