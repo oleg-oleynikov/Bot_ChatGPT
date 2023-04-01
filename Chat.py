@@ -3,12 +3,7 @@
 import aiogram
 from revChatGPT.V3 import Chatbot
 from aiogram import Bot, Dispatcher, types, executor
-
-
-try:
-    from config import BOT_TOKEN, API_KEY
-except:
-    BOT_TOKEN, API_KEY = "6071620400:AAFdFm8QNsy3IEBVsO4R2WaIp8a5LHcna3U", "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"
+from config import BOT_TOKEN, API_KEY
 
 chatbot = Chatbot(API_KEY, system_prompt="You are ChatGPT, a large language model trained by OpenAI. Respond conversationally and then be sure to write everything in Russian. Imagine that you are an seo copywriter, also mandatory that the text should be at least 3000 characters long")
 
